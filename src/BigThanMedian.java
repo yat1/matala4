@@ -25,6 +25,7 @@ public class BigThanMedian {
 			i++;
 		}	
 		System.out.println("in regular threads Lapse = " + (System.currentTimeMillis() - start)+ " miliseconds");
+		Arrays.sort(bigger);
 		return bigger;
 	}
 	
@@ -59,6 +60,7 @@ public class BigThanMedian {
 				bigger[l] = res[a.length+l];
 			}
 	        System.out.println("in merge Lapse = " + (System.currentTimeMillis() - start)+ " miliseconds");
+	        Arrays.sort(bigger);
 	        return bigger;
 	    }
 
@@ -66,12 +68,12 @@ public class BigThanMedian {
 
 	public static void main(String[] args) {
 		Random rnd = new Random(124);
-		int amount = 10000;
+		int amount = 1000;
 		int[] a = new int[amount];
 		int[] b = new int[amount];
 		for (int i = 0; i < amount; i++) {
-			a[i] = rnd.nextInt(10000);
-			b[i] = rnd.nextInt(10000);
+			a[i] = rnd.nextInt(1000000);
+			b[i] = rnd.nextInt(1000000);
 		}
 		Arrays.sort(a); 
 		Arrays.sort(b); 
@@ -95,16 +97,10 @@ public class BigThanMedian {
 		for (int i = 0; i < d.length; i++) {
 			System.out.print(d[i] + ", ");
 		}
-		Arrays.sort(c); 
-		Arrays.sort(d); 
 		System.out.println("");
 		 if (Arrays.equals(c, d)) 
 			  System.out.println("Same"); 
 	        else
 	            System.out.println("Not same"); 
-
-	
-	//int[] a = {3,5,7,9, 69};
-			//int[] b = {1,4,7,12, 852};
 	}		
 }
