@@ -1,10 +1,13 @@
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.Arrays;
 import java.util.Random;
-
 import org.junit.jupiter.api.Test;
 
+/**
+ * a junit test class, creates two random arrays from the same length, sorts them, compares the result between
+ * bigThanMedianAlgo and bigThanMedianMerge
+ * @author yehud
+ */
 class BigThanMedianTest {
 
 	

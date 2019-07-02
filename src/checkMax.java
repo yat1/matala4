@@ -1,4 +1,8 @@
-
+/**
+ * a class that extends thread, it gets two numbers and sets max to be the bigger number
+ * @author yehud
+ *
+ */
 public class checkMax extends Thread{
 	
 	private int a,b,max;

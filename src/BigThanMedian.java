@@ -3,6 +3,14 @@ import java.util.Random;
 
 public class BigThanMedian {
 	
+	/**
+	 * function gets two sorted arrays with random numbers, it returns an array with all the numbers that are bigger then 
+	 * the median, each comparison is done in a separate thread, the results are added to the bigger array that will be returned
+	 * the time it takes is counted and printed
+	 * @param a
+	 * @param b
+	 * @return
+	 */
 	public static int[] bigThanMedianAlgo(int[] a, int[] b) {
 		long start = System.currentTimeMillis();
 		int[] bigger = new int[a.length];
@@ -29,6 +37,14 @@ public class BigThanMedian {
 		return bigger;
 	}
 	
+	/**
+	 *  function gets two sorted arrays with random numbers, it returns an array with all the numbers that are bigger then 
+	 * the median, both arrays are merged together, the biger half of the merged array is added to the bigger array 
+	 * that will be returned the time it takes is counted and printed
+	 * @param a
+	 * @param b
+	 * @return
+	 */
 	public static int[] bigThanMedianMerge(int[]a, int[] b){
 		long start = System.currentTimeMillis();
 		int[] res = new int[a.length+b.length];
@@ -68,7 +84,7 @@ public class BigThanMedian {
 
 	public static void main(String[] args) {
 		Random rnd = new Random(124);
-		int amount = 1000;
+		int amount = 100000;
 		int[] a = new int[amount];
 		int[] b = new int[amount];
 		for (int i = 0; i < amount; i++) {
@@ -77,7 +93,9 @@ public class BigThanMedian {
 		}
 		Arrays.sort(a); 
 		Arrays.sort(b); 
-		System.out.print("a: ");
+		int[] c = bigThanMedianAlgo(a,b);
+		int[] d = bigThanMedianMerge(a,b);
+		/*System.out.print("a: ");
 		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + ", ");
 		}
@@ -87,17 +105,15 @@ public class BigThanMedian {
 			System.out.print(b[i] + ", ");
 		}
 		System.out.println("");
-		int[] c = bigThanMedianAlgo(a,b);
 		for (int i = 0; i < c.length; i++) {
 			System.out.print(c[i] + ", ");
 		}
 		System.out.println("");
 		
-		int[] d = bigThanMedianMerge(a,b);
 		for (int i = 0; i < d.length; i++) {
 			System.out.print(d[i] + ", ");
 		}
-		System.out.println("");
+		System.out.println("");*/
 		 if (Arrays.equals(c, d)) 
 			  System.out.println("Same"); 
 	        else
